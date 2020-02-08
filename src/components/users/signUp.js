@@ -3,12 +3,13 @@ import { Formik } from 'formik';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { submitSignUp } from '../../Redux/actions'
+import '../../css/style.scss';
 
 const SignUp = props => {
 	return (
 		<Fragment>
 			<div className="container mt-5 pt-5" style={{width:"40%"}}>
-				<h3 className="text-center mb-5 text-primary">Sign Up</h3>
+				<h3 className="text-center mb-5 text-dark">Sign Up</h3>
 			<Formik
       initialValues={{ email: '', password: '' }}
       validate={values => {
@@ -66,8 +67,8 @@ const SignUp = props => {
 					{errors.password && touched.password && <span className="text-danger">{errors.password}</span>}
           {errors.password && touched.password && <span className="text-danger">{errors.password}</span>}
 					</div>
-          <button className={`btn ${isSubmitting ? `btn-success` : `btn-primary`}`} type="submit" disabled={isSubmitting}>
-            Submit
+          <button className={`btn ${isSubmitting ? `btn-success` : `btn-dark`}`} type="submit" disabled={isSubmitting}>
+            <span className="pr-2">Submit</span> <div style={{display: isSubmitting? 'inlineBlock': "none"}} className="loader"></div>
           </button>
         </form>
       )}
