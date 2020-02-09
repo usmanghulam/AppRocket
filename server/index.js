@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 // Routers 
 app.use("/signup" || "/signup/*",require("./routers/sign-up"));
 app.use('/login' || '/login/*',require("./routers/login"));
+app.use('/search' || '/search/*',require("./routers/search"));
+app.use('/users' || '/users/*',require('./routers/contacts'));
 
 
 
