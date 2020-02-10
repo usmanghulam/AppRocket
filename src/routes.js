@@ -15,11 +15,10 @@ class routes extends Component {
         <Route path="/login" component={Login}/>
         <Route path="/signUp" component={SignUp}/>
         <Route path="/home" render={()=>{
-          return <Chatroom/>
-          // let userCredentials = localStorage.getItem("AppRocket");
-          // let parseUser = JSON.parse(userCredentials);
-          // if (parseUser && parseUser.email && parseUser.password) return <Chatroom/>
-          // else return <MainPage/>
+          let userCredentials = localStorage.getItem("AppRocket");
+          let parseUser = JSON.parse(userCredentials);
+          if (parseUser && parseUser.email && parseUser.password) return <Chatroom/>
+          else return <MainPage/>
         }}/>
       </div>
     );
